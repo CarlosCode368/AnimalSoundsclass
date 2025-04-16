@@ -1,15 +1,48 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+//NOUNS people, places things, ideas are classes
+//is a relationship aka inheritance
+class Animal{
+    boolean hadHeart=true;
+    String noise;
+    Animal(String noise) {
+        this.noise = noise;
+    }
+    void speak(){
+        System.out.println(this.noise);
+
+    }
+}
+class Pet extends Animal {
+    String name;
+
+    Pet(String name, String noise){
+        super(noise);
+    this.name=name;
+   }
+   void speak(){
+       System.out.printf("Hi, my name is '%s'. I go '%s'!!!", this.name, this.noise);
+   }
+}
+class Dog extends Pet{
+    Dog(String name){
+        super(name,"Woof");
+    }
+}
+class Cat extends Pet{
+    Cat(String name){
+            super(name,"meow");
+        }
+    }
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Animal a = new Animal("squeak");
+        Dog d = new Dog ("Volga");
+        Cat c = new Cat ("Bolik");
+        Animal[]zoo={a,d,c};
+        for(Animal animal: zoo){
+            animal.speak();
         }
     }
 }
