@@ -38,9 +38,10 @@ class Cat extends Pet{
 public class Main {
     public static void main(String[] args) {
         Animal a = new Animal("squeak");
+        Pet p= new Pet("Rocky the pet Rock", "...");
         Dog d = new Dog ("Volga");
         Cat c = new Cat ("Bolik");
-        Animal[]zoo={a,d,c};
+        Animal[]zoo={a,d,c,p};
         for(Animal animal: zoo){
             animal.speak();
         }
